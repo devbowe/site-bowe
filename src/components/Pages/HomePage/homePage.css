@@ -1,0 +1,131 @@
+
+.banner::after,
+.bg-img-dark::after {
+  content: '';
+    position: absolute;
+    right: 0;
+    top:0;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-image: url('../../../assets/img/bg-bannerBlue.svg');
+    width: 25%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.3;
+}
+
+.banner::before,
+.bg-img-dark::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom:0;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-image: url('../../../assets/img/bg-bannerRed.svg');
+    width: 10%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.7;
+}
+
+section.menSection{
+  display: flex;
+  align-items: center;
+}
+
+@media(max-width: 1280px){
+  .banner::after,
+  .bg-img-dark::after {
+    width: 40%;
+  }
+  .banner::before,
+  .bg-img-dark::before {
+    width: 20%;
+  }
+}
+
+@media(max-width: 1024px){
+  .banner::after,
+  .bg-img-dark::after {
+    width: 45%;
+  }
+  .urlVideo div {
+    width: 500px;
+  }
+}
+
+@media(max-width: 768px){
+  .banner::after,
+  .bg-img-dark::after {
+    top: 140px;
+    width: 60%;
+  }
+  .banner::before,
+  .bg-img-dark::before {
+    top: 400px;
+    width: 10%;
+  }
+  section.menSection{
+    align-items: initial;
+    justify-content: center;
+    min-height: 981px;
+  }
+}
+
+@media(max-width: 540px){
+  .banner::after,
+  .bg-img-dark::after {
+    background-image: url('../../../assets/img/bg-banner-blue-rotate.svg');
+    top: 400px;
+    width: 60%;
+    max-height: 400px;
+  }
+  .banner::before,
+  .bg-img-dark::before {
+    display: none;
+  }
+
+  section.menSection{
+    align-items: initial;
+    justify-content: center;
+    min-height: 892px;
+  }
+}
+
+@media(max-width: 414px){
+  .banner::after,
+  .bg-img-dark::after {
+    top: 480px;
+    width: 80%;
+    max-height: 400px;
+  }
+  section.menSection{
+    align-items: initial;
+    justify-content: center;
+    min-height: 863px;
+  }
+}
+
+@media(max-width: 375px){
+  .banner::after,
+  .bg-img-dark::after {
+    top: 410px;
+    width: 80%;
+    max-height: 400px;
+  }
+  section.menSection{
+    align-items: initial;
+    justify-content: center;
+    min-height: 650px;
+  }
+}
+
+@media(max-width: 320px){
+  .banner::after,
+  .bg-img-dark::after {
+    top: 500px;
+    width: 80%;
+    max-height: 400px;
+  }
+}

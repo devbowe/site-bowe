@@ -1,0 +1,27 @@
+.carousel-indicators li {
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    border: 1px solid transparent;
+    background:rgb(182, 182, 182);
+}
+
+.carousel-indicators .active{
+    background:blue;
+}
+
+.carousel-control-prev, .carousel-control-next{
+    display: none;
+}
+
+.carousel-img img {
+    width: 33%;
+    padding: 20px 0px;
+    height: auto;
+}
+
+.carrosel{
+    max-width: 100%;
+    
+}
+

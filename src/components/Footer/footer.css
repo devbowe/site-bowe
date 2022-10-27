@@ -1,0 +1,14 @@
+.CookieConsent {
+  z-index: 999;
+}
+
+.CookieConsent a {
+  color: #222137;
+  font-weight: 600;
+  text-decoration: underline;
+  transition: all ease 0.4s;
+}
+
+.CookieConsent a:hover {
+  color: #584ad4;
+}

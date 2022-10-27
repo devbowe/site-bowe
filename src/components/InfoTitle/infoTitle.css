@@ -1,0 +1,6 @@
+.textCursor::after{
+  content: "|";
+  font-family: none;
+  margin-left:5px;
+  color: #000000;
+} 

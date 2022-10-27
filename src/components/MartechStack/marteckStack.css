@@ -1,0 +1,283 @@
+.item .info {
+  line-height: 1.2rem;
+  justify-content: inherit;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+div.col-md-3:nth-child(1) .item {
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+div.col-md-3:nth-child(2) .item {
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+div.col-md-3:nth-child(3) .item {
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+div.col-md-3:nth-child(4) .item {
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#marteck-container h4 {
+  font-weight: bold;
+  font-family: "Syne", sans-serif;
+}
+
+#marteck-container .container .box .item a {
+  transition: 0.8s;
+  cursor: pointer;
+}
+
+#marteck-container .container .box .item a:hover {
+  filter: brightness(0.5);
+}
+
+#marteck-bar {
+  width: 100%;
+  margin: 0 auto;
+}
+
+#marteck-bar h4 {
+  font-weight: bold;
+  font-family: "Syne", sans-serif;
+}
+
+#marteck-bar .barMartechImg {
+  width: 100%;
+}
+
+#marteck-bar .icon-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+#marteck-bar .icon-info .title {
+  text-align: center;
+  width: 160px;
+}
+
+.poupup-tooltip {
+  box-shadow: 10px 10px 5px 0px rgba(140, 140, 140, 0.04);
+  max-width: 140px;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 420px) {
+  #marteck-container {
+    background: url("../../assets/img/bgMarteckStack.jpg");
+    background-size: 100%;
+    background-position: center 35%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  #marteck-container {
+    background: url("../../assets/img/bg-martech-stack.svg");
+    background-size: 103%;
+    background-position: center center;
+    min-height: 745px;
+    padding-top: 9rem;
+    margin-top: -5rem;
+  }
+
+  #marteck-container .container {
+    width: 83%;
+    margin: 0 0 0 5rem;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  #marteck-container {
+    background: url("../../assets/img/bg-martech-stack.svg") no-repeat;
+    background-size: 106%;
+    background-position: center center;
+    min-height: 745px;
+    padding-top: 9rem;
+    margin-top: -5rem;
+  }
+
+  #marteck-container .container {
+    width: 83%;
+    margin: 0 0 0 5rem;
+  }
+}
+
+@media screen and (max-width: 1030px) {
+  #marteck-container {
+    background: url("../../assets/img/bg-martech-stack.svg") no-repeat;
+    background-size: 106%;
+    background-position: center -135%;
+    min-height: 745px;
+    padding-top: 9rem;
+    margin-top: -5rem;
+  }
+
+  #marteck-container .container {
+    width: 87%;
+    margin: 0 0 0 2.8rem;
+  }
+
+  div.col-md-3:nth-child(1) .item,
+  div.col-md-3:nth-child(4) .item{
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3rem;
+  }
+
+  
+  div.col-md-3:nth-child(2) .item,
+  div.col-md-3:nth-child(3) .item {
+    height: 115px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3rem;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  #marteck-container {
+    background: url("../../assets/img/bg-martech-stack.svg") no-repeat;
+    background-size: 106%;
+    background-position: center 15%;
+    min-height: 745px;
+    padding-top: 9rem;
+    margin-top: -5rem;
+  }
+
+  #marteck-container .container {
+    width: 85%;
+    margin: 0 0 0 2.8rem;
+  }
+
+  div.col-md-3:nth-child(1) .item,
+  div.col-md-3:nth-child(4) .item{
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3rem;
+  }
+
+  
+  div.col-md-3:nth-child(2) .item,
+  div.col-md-3:nth-child(3) .item {
+    height: 115px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3rem;
+  }
+}
+
+
+@media screen and (max-width: 440px) {
+  #marteck-container {
+    background-position: center 100%;
+    padding: 15rem 0 10rem;
+  }
+
+
+  div.col-md-3:nth-child(1) .item,
+  div.col-md-3:nth-child(2) .item,
+  div.col-md-3:nth-child(3) .item,
+  div.col-md-3:nth-child(4) .item {
+    height: 125px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3rem;
+  }
+  
+}
+
+@media screen and (max-width: 540px) {
+  #marteck-container {
+    background: url("../../assets/img/bgMarteckStack.jpg") no-repeat;
+    background-size: 100%;
+    background-position: center 38%;
+    padding: 15rem 0 30rem;
+  }
+
+  #marteck-container .container {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  #martech-wraper{
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    margin: 0 auto;
+  }
+
+  div.col-md-3:nth-child(1) .item,
+  div.col-md-3:nth-child(2) .item,
+  div.col-md-3:nth-child(3) .item,
+  div.col-md-3:nth-child(4) .item {
+    height: 130px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 5rem;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  #marteck-container {
+    background: url("../../assets/img/bgMarteckStack.jpg") no-repeat;
+    background-size: 100%;
+    background-position: center 39%;
+    padding: 15rem 0 30rem;
+    margin-bottom: -25rem;
+  }
+
+  #marteck-container .container {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  #martech-wraper{
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    margin: 0 auto;
+  }
+
+  div.col-md-3:nth-child(1) .item,
+  div.col-md-3:nth-child(2) .item,
+  div.col-md-3:nth-child(3) .item,
+  div.col-md-3:nth-child(4) .item {
+    height: 110px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2.3rem;
+  }
+}

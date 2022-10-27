@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="396" height="720" viewBox="0 0 396 720">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Retângulo_12" data-name="Retângulo 12" width="396" height="720" transform="translate(1524 169)" fill="none"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <path id="Interseção_1" data-name="Interseção 1" d="M50.582,294.815a172.7,172.7,0,1,1,260.923-224.9l4.083-2.947.552-22.9,31.134-21.07v55.94l-3.84,2.952L320.17,74.774l-3.482,2.513q2.214,3.334,4.255,6.74a171.388,171.388,0,0,1-131,260.514q-8.6.857-17.243.857A172.159,172.159,0,0,1,50.582,294.815Z" transform="translate(4379.394 1646.332)" fill="#fff" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+    <linearGradient id="linear-gradient" y1="0.5" x2="1" y2="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="1"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" x1="0.084" y1="0.5" x2="0.916" y2="0.5" xlink:href="#linear-gradient"/>
+    <clipPath id="clip-path-3">
+      <rect id="Retângulo_8" data-name="Retângulo 8" width="492" height="290" transform="translate(4099 1420)" fill="#fff" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+    <linearGradient id="linear-gradient-5" x1="-0.553" y1="8.216" x2="0.447" y2="8.216" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-6" x1="-0.267" y1="7.966" x2="0.733" y2="7.966" xlink:href="#linear-gradient"/>
+  </defs>
+  <g id="Grupo_de_máscara_6" data-name="Grupo de máscara 6" transform="translate(-1524 -169)" clip-path="url(#clip-path)">
+    <g id="Grupo_de_máscara_1" data-name="Grupo de máscara 1" transform="translate(-2807.169 -1136.973)" clip-path="url(#clip-path-2)">
+      <g id="Componente_1_1" data-name="Componente 1 – 1" transform="translate(4308.835 1574.797)">
+        <g id="Grupo_33" data-name="Grupo 33" transform="translate(0 0)" opacity="0.45" style="mix-blend-mode: multiply;isolation: isolate">
+          <path id="Caminho_284" data-name="Caminho 284" d="M-2959.427,682.418l-.715,29.692,57.051-43.672-.669-23.692Z" transform="translate(3347.103 -566.824)" fill="url(#linear-gradient)"/>
+          <path id="Caminho_285" data-name="Caminho 285" d="M-2932.143,720.856l-28.4-8.677,59.426-40.384,22.273,8.1Z" transform="translate(3347.112 -567.441)" fill="url(#linear-gradient)"/>
+          <circle id="Elipse_5" data-name="Elipse 5" cx="172.699" cy="172.699" r="172.699" transform="translate(0 244.233) rotate(-45)"/>
+          <circle id="Elipse_6" data-name="Elipse 6" cx="171.347" cy="171.347" r="171.347" transform="translate(4.19 245.378) rotate(-45)" fill="#fffdee"/>
+          <circle id="Elipse_7" data-name="Elipse 7" cx="143.297" cy="143.297" r="143.297" transform="translate(103.214 102.081)"/>
+          <circle id="Elipse_8" data-name="Elipse 8" cx="115.584" cy="115.584" r="115.584" transform="translate(83.051 245.378) rotate(-45)" fill="#fff"/>
+          <circle id="Elipse_9" data-name="Elipse 9" cx="89.419" cy="89.419" r="89.419" transform="translate(122.13 222.556) rotate(-34.603)"/>
+          <circle id="Elipse_10" data-name="Elipse 10" cx="60.688" cy="60.688" r="60.688" transform="matrix(0.954, -0.299, 0.299, 0.954, 170.467, 205.586)" fill="#fff"/>
+          <circle id="Elipse_11" data-name="Elipse 11" cx="30.754" cy="30.754" r="30.754" transform="translate(214.568 215.861) rotate(-2.26)" fill="#0a0a0a"/>
+          <rect id="Retângulo_2" data-name="Retângulo 2" width="245.578" height="9.013" transform="translate(243.052 242.469) rotate(-35.816)" fill="url(#linear-gradient-3)"/>
+        </g>
+      </g>
+    </g>
+    <g id="Grupo_de_máscara_2" data-name="Grupo de máscara 2" transform="translate(-2671 -1201)" clip-path="url(#clip-path-3)">
+      <g id="Grupo_34" data-name="Grupo 34" transform="translate(7030.039 997.24)" opacity="0.6" style="mix-blend-mode: multiply;isolation: isolate">
+        <path id="Caminho_283" data-name="Caminho 283" d="M-2468.944,502.975l-48.594,6.517,20.627,26.747-118.878,82.91-47.834-68.585L-2822.73,661.533l14.657,21.015,138.093-96.311,47.833,68.585,140.9-98.27,23.591,30.59L-2439,541.8l18.653-45.342Z" fill="url(#linear-gradient)"/>
+        <circle id="Elipse_3" data-name="Elipse 3" cx="19.133" cy="19.133" r="19.133" transform="translate(-2693.152 579.504) rotate(-66.841)" fill="url(#linear-gradient-5)"/>
+        <circle id="Elipse_4" data-name="Elipse 4" cx="19.133" cy="19.133" r="19.133" transform="translate(-2645.962 631.423) rotate(-34.893)" fill="url(#linear-gradient-6)"/>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,11 @@
+.layout {
+    background: #ffffff;
+    border-radius: 50px 50px 0px 0px;
+  }
+  
+  @media screen and (max-width: 640px) {
+    .layout {
+      border-radius: 0;
+    }
+  }
+  

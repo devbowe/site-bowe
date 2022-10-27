@@ -1,0 +1,119 @@
+/* BLUE */
+.bg-img-blue::after{
+    content: '';
+    position: absolute;
+    right: 0;
+    top:0;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-image: url('../../assets/img/bg-header-blue.svg');
+    width: 25%;
+    height: 100%;
+    z-index: -1;
+}
+.bg-img-small-blue::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 20%;
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-image: url('../../assets/img/bg-header-small-blue.svg');
+    width: 25%;
+    height: 50%;
+    z-index: -1;
+}
+
+@media(max-width: 992px){
+    .bg-img-blue::after{
+        content: '';
+        position: absolute;
+        right: 0;
+        top:60%;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-image: url('../../assets/img/bg-header-blue-bottom.svg');
+        width: 80%;
+        height: 100%;
+        z-index: -1;
+    }
+
+    .bg-img-small-blue::before{
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 20%;
+        background-size: 80%;
+        background-repeat: no-repeat;
+        background-image: url('../../assets/img/bg-header-small-blue-bottom.svg');
+        width: 25%;
+        height: 50%;
+        z-index: -1;
+    }
+}
+
+/* RED */
+.bg-img-red::after{
+    content: '';
+    position: absolute;
+    right: 0;
+    top:0;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-image: url('../../assets/img/bg-header-red.svg');
+    width: 25%;
+    height: 100%;
+    z-index: -1;
+}
+.bg-img-small-red::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 20%;
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-image: url('../../assets/img/bg-header-small-red.svg');
+    width: 25%;
+    height: 50%;
+    z-index: -1;
+}
+
+@media(max-width: 992px){
+    .bg-img-red::after{
+        content: '';
+        position: absolute;
+        right: 0;
+        top:60%;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-image: url('../../assets/img/bg-header-red-bottom.svg');
+        width: 80%;
+        height: 100%;
+        z-index: -1;
+    }
+
+    .bg-img-small-red::before{
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 20%;
+        background-size: 80%;
+        background-repeat: no-repeat;
+        background-image: url('../../assets/img/bg-header-small-red-bottom.svg');
+        width: 25%;
+        height: 50%;
+        z-index: -1;
+    }
+}
+@media(max-width: 768px){
+    .bd-nav-red nav {
+        background-color: #DD2246;
+    }
+    .bd-nav-blue nav {
+        background-color: #5038C9;
+    }
+    .bd-nav-dark nav,
+    .bd-nav-darkBlue nav {
+        background-color: #222137;
+    }
+}

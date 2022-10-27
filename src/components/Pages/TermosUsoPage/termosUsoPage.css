@@ -1,0 +1,129 @@
+.wraper-content {
+    padding: 6rem;
+    border-radius: 50px;
+    margin-top: -3rem;
+    background-color: #ffffff;
+    z-index: 1;
+    position: relative;
+  }
+  
+  .wraper-content nav.sidebar {
+      padding-top: 5rem;
+  }
+  
+  .wraper-content nav.sidebar ul li a {
+    font-family: "Syne", sans-serif;
+    color: #222137;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 1.6rem;
+    cursor: pointer;
+  }
+  
+  .wraper-content nav.sidebar ul li {
+    margin-bottom: 1.3rem;
+  }
+  
+  .wraper-content .content {
+  
+      
+      height: 100vh;
+      overflow: auto;
+  }
+  
+  .wraper-content .content .info {
+    line-height: 1.6rem;
+    color: #4a45d8;
+  }
+  
+  .wraper-content .content .info a {
+    text-decoration: underline;
+    color: #4a45d8;
+  }
+  
+  .wraper-content .content .info strong {
+    font-weight: bold;
+  }
+  
+  .wraper-content .content .info hr {
+    border-bottom: 1px solid #d5d5d5;
+    border-top: 0;
+    margin: 5.3rem 0 0;
+  }
+  
+  .wraper-content .content .info h3 {
+    font-size: 1.5rem;
+    color: #222137;
+    font-weight: bold;
+    margin-bottom: 1.8rem;
+    padding-top: 5rem;
+  }
+  
+  div[class*="-topic"] {
+    color: #656473;
+  }
+  
+  div[class*="-topic"] span.underscore {
+    text-decoration: underline;
+  }
+  
+  div[class*="-topic"] a {
+    color: #656473 !important;
+    text-decoration: underline;
+    transition: all ease 0.6s;
+  }
+  
+  div[class*="-topic"] a:hover {
+    color: #222137 !important;
+  }
+  
+  .fifth-topic table {
+    border-collapse: separate;
+    border-spacing: 1rem;
+    margin-left: -1rem;
+  }
+  
+  .fifth-topic table thead tr th:nth-child(1) {
+    background: #f4f4f4;
+    color: #222137;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 1.3rem 0;
+  }
+  .fifth-topic table thead tr th:nth-child(2),
+  .fifth-topic table thead tr th:nth-child(3) {
+    background: #d5d5d5;
+    color: #222137;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 1.3rem 0;
+  }
+  
+  .fifth-topic table tbody tr td:nth-child(1) {
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    color: #222137;
+  }
+  
+  .fifth-topic table tbody tr td:nth-child(2),
+  .fifth-topic table tbody tr td:nth-child(3) {
+    background: #f4f4f4;
+    color: #656473;
+    font-size: 1rem;
+    text-align: left;
+    padding: 1.3rem;
+    display: table-cell;
+    vertical-align: middle;
+  }
+  
+  @media screen and (max-width: 765px) {
+    .wraper-content {
+      padding: 6rem 1rem;
+    }
+  }
+  

@@ -1,0 +1,48 @@
+.success-message{
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+    background: #fff;
+    border: 1px solid #51ad57;
+    border-radius: 6px;
+    box-shadow: 4px 4px 6px 1px rgba(0,0,0,0.1);
+}
+
+.error-message{
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+    background: #fff;
+    border: 1px solid #F11F45;
+    border-radius: 6px;
+    box-shadow: 4px 4px 6px 1px rgba(0,0,0,0.1);
+}
+
+#first-step{
+    display: flex;
+}
+
+#second-step{
+    display: flex;
+}
+
+#second-step select{
+    outline: none;
+    background: none;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-image: initial;
+    border-bottom: 2px solid rgb(119, 119, 119);
+    border-radius: 2px;
+    height: 20px;
+    font-size: 14px;
+    font-weight: 400;
+    color: black;
+    opacity: 0.9;
+    width: 100%;
+}
+
+#second-step select:focus{
+    border-color: #E1244F
+}
