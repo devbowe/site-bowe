@@ -5,14 +5,14 @@ import { useStaticQuery, graphql } from "gatsby"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 const LogoWrap = styled.div`
-  margin: auto 0;
   flex: 0 2 137px;
   position: relative;
   z-index: 1;
-  @media (max-width: 768px) {
-    img {
-      width: 70%;
-    }
+  @media (max-width: 800px) {
+    flex: 0 2 20%;
+  }
+  @media (max-width: 700px) {
+    flex: 0 2 30%;
   }
 `
 const Logo = () => {
@@ -20,7 +20,7 @@ const Logo = () => {
     query {
       file(name: { eq: "boweIcon" }, extension: { eq: "png" }) {
         childImageSharp {
-          fluid(maxWidth: 141, maxHeight: 61,pngQuality: 80) {
+          fluid(maxWidth: 141,pngQuality: 100) {
             ...GatsbyImageSharpFluid
           }
         }

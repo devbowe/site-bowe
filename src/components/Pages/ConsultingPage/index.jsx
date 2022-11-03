@@ -92,6 +92,7 @@ const ConsultingPage = () => {
     colorTextPrimary: "black",
     colorTextButton: "light",
     colorBackgroundButton: "red",
+    infoButton: () => scrollTo("#contact"),
     hoverColorButton: "ligthRed",
     squareButton: false,
   }
@@ -194,10 +195,7 @@ const ConsultingPage = () => {
               <StyledMap src={MapImg}></StyledMap>
             </Col>
             <Col className="col-12 col-md-6 col-lg-6 col-xl-6 mb-sm-5 mb-md-5 px-0 mt-md-5 pt-5 d-flex align-items-center">
-              <InfoPercentage
-                infoButton={() => scrollTo("#contact")}
-                {...infoPercentageData}
-              />
+              <InfoPercentage {...infoPercentageData} />
             </Col>
           </section>
         </section>

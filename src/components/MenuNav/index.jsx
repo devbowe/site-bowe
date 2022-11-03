@@ -20,7 +20,7 @@ const Navigation = styled.nav`
 		left: 0;
 		right: 0;
 		left: 0;
-		z-index: 999;
+		z-index: 3;
 		padding: 0;
 	}
 `
@@ -115,7 +115,7 @@ const Navbar = ({ classMenuNav }) => {
 	return (
 		<Container fluid className={classMenuNav ? classMenuNav : "px-5"}>
 			<Navigation>
-				<BoxGroupLogo>
+				<BoxGroupLogo className="align-items-center">
 					<Logo />
 					<Toggle
 						navbarOpen={navbarOpen}

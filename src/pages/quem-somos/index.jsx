@@ -1,12 +1,12 @@
-import React from 'react';
-import QuemSomosPage from '../../components/Pages/QuemSomosPage';
+import React from "react"
+import QuemSomosPage from "../../components/Pages/QuemSomosPage"
 
 const QuemSomos = () => {
-    return (
-        <>
-            <QuemSomosPage />
-        </>
-    )
+  return (
+    <>
+      <QuemSomosPage />
+    </>
+  )
 }
 
-export default QuemSomos;
+export default QuemSomos

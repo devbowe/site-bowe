@@ -374,26 +374,13 @@ export const BoxSession8 = styled.div`
   }
 `
 export const StyleHorseContainer = styled.div`
-  padding-top: 150px;
-  padding-bottom: 50px;
+  padding-block: 4rem;
   background-position: top right;
   background-repeat: no-repeat;
   background-image: url(${({ troiaHorse }) => troiaHorse});
   background-size: contain;
   @media (max-width: 1100px) {
-    background-position: bottom right;
-    background-size: 20%;
-  }
-
-  @media (max-width: 768px) {
-    padding-top: 50px;
-    background-size: 50% !important;
-    background-position: bottom right !important;
-    padding-bottom: 70% !important;
-    text-align: center;
-    p {
-      text-align: left;
-    }
+    background: none;
   }
 `
 export const FlexCenter = styled.div`

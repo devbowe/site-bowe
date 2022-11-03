@@ -181,7 +181,7 @@ const ContactForm = ({
 
       <StyledContainer
         textInputFocus={color}
-        className="d-flex my-5 flex-wrap"
+        className="d-flex flex-wrap"
         onSubmit={handleSubmit(onSubmit)}
       >
         <input

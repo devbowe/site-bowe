@@ -6,7 +6,7 @@ export const BannerContainer = styled.section`
   min-height: 600px;
   background: ${({ bgColor }) =>
     bgColor ? defaultTheme.colors[bgColor] : "#FFFFFF"};
-  z-index: 1;
+  z-index: 4;
   position: relative;
 `
 

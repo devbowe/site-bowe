@@ -484,30 +484,28 @@ const HomePage = () => {
             className="my-mb-5 my-lg-5 my-xl-5 mx-3 px-0 mx-md-5 mx-lg-5 mx-xl-5 px-md-5 px-lg-4 px-xl-4"
             id="contact"
           >
-            <div className="mb-5">
-              <Row>
-                <Col className="col-12 px-4 px-sm-5 px-md-5">
-                  <ContactForm
-                    defaultNamePage="Home"
-                    defaultUtmSource="site"
-                    defaultUtmMedium="home"
-                    defaultUtmCampaign="bw_site"
-                    defaultUtmContent=" "
-                    formTitle={[
-                      {
-                        color: "black",
-                        text: "Entenda hoje como podemos fazer sua empresa",
-                      },
-                    ]}
-                    span=" inovar"
-                    color="red"
-                    textColor="light"
-                    colorHover="darkBlue"
-                    textButton="solicitar contato"
-                  />
-                </Col>
-              </Row>
-            </div>
+            <Row>
+              <Col className="col-12 px-4 px-sm-5 px-md-5">
+                <ContactForm
+                  defaultNamePage="Home"
+                  defaultUtmSource="site"
+                  defaultUtmMedium="home"
+                  defaultUtmCampaign="bw_site"
+                  defaultUtmContent=" "
+                  formTitle={[
+                    {
+                      color: "black",
+                      text: "Entenda hoje como podemos fazer sua empresa",
+                    },
+                  ]}
+                  span=" inovar"
+                  color="red"
+                  textColor="light"
+                  colorHover="darkBlue"
+                  textButton="solicitar contato"
+                />
+              </Col>
+            </Row>
           </Row>
         </S.StyleHorseContainer>
       </div>

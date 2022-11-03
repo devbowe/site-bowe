@@ -32,7 +32,6 @@ import SAPLogo from "../../../assets/img/logos/sap.png"
 
 import ContactForm from "../../ContactForm"
 import TroiaHorse from "../../../assets/img/troiaRed.svg"
-import { StyleHorseContainer } from "../DemandGenerationPage/styled"
 
 const QuemSomosPage = () => {
   const headerProps = {
@@ -222,6 +221,7 @@ const QuemSomosPage = () => {
             classCol="col-12 col-sm-12 col-md-10 mb-md-5 col-lg-6 col-xl-3"
             list={cards}
           />
+
           <Row className="mx-4 mx-sm-4 mx-md-4 mx-lg-4 mx-xl-5 px-sm-4 px-md-4 px-lg-4 px-xl-5">
             <Spacing p="0">
               <section className="d-flex justify-content-between align-items-start align-items-lg-center align-items-xl-center flex-column flex-lg-row flex-xl-row">
@@ -229,7 +229,7 @@ const QuemSomosPage = () => {
                   <InfoTitle {...culture} />
                 </Col>
                 <Col className="col-12 col-lg-4 col-xl-4 p-0 d-flex align-items-center">
-                  <S.SlideWrapper>
+                  <S.SlideWrapper className="mb-5">
                     <Slide slides={slides} interval={3000} />
                   </S.SlideWrapper>
                 </Col>
@@ -237,58 +237,56 @@ const QuemSomosPage = () => {
             </Spacing>
           </Row>
 
-          <section className="d-md-block my-5">
-            <History
-              colorTitle="black"
-              colorSubTitle="black"
-              backgroundColor="light"
-              color="black"
-              menuItemColor="red"
-              title="História da "
-              name="Bowe"
-              subtitle="Quem nos viu, quem nos vê"
-              data={methodology}
+          <History
+            colorTitle="black"
+            colorSubTitle="black"
+            backgroundColor="light"
+            color="black"
+            menuItemColor="red"
+            title="História da "
+            name="Bowe"
+            subtitle="Quem nos viu, quem nos vê"
+            data={methodology}
+          />
+
+          <div id="contact" style={{ backgroundColor: "#fff" }}>
+            <S.StyleHorseContainer troiaHorse={TroiaHorse}>
+              <Row className="my-mb-5 my-lg-5 my-xl-5 mx-3 px-0 mx-md-5 mx-lg-5 mx-xl-5 px-md-5 px-lg-4 px-xl-4">
+                <div className="mb-5">
+                  <Row>
+                    <Col className="col-12 px-4 px-sm-5 px-md-5">
+                      <ContactForm
+                        defaultNamePage="Geração de Demanda"
+                        defaultUtmSource="site"
+                        defaultUtmMedium="demand-generation"
+                        defaultUtmCampaign="bw_site"
+                        defaultUtmContent=" "
+                        formTitle={[
+                          {
+                            color: "white",
+                            text:
+                              "Falta pouco para multiplicar suas oportunidades",
+                          },
+                        ]}
+                        color="red"
+                        textColor="light"
+                        formSubTitle="Fale com nossos especialistas e descubra como."
+                        colorHover="darkBlue"
+                        textButton="solicitar contato"
+                      />
+                    </Col>
+                  </Row>
+                </div>
+              </Row>
+            </S.StyleHorseContainer>
+          </div>
+
+          <S.Outpartners>
+            <TileBlocksImg
+              title="Sempre gratos às empresas que cocriaram com a gente"
+              list={tileBlocksImgHelpers}
             />
-
-            <div id="contact" style={{ backgroundColor: "#fff" }}>
-              <StyleHorseContainer troiaHorse={TroiaHorse}>
-                <Row className="my-mb-5 my-lg-5 my-xl-5 mx-3 px-0 mx-md-5 mx-lg-5 mx-xl-5 px-md-5 px-lg-4 px-xl-4">
-                  <div className="mb-5">
-                    <Row>
-                      <Col className="col-12 px-4 px-sm-5 px-md-5">
-                        <ContactForm
-                          defaultNamePage="Geração de Demanda"
-                          defaultUtmSource="site"
-                          defaultUtmMedium="demand-generation"
-                          defaultUtmCampaign="bw_site"
-                          defaultUtmContent=" "
-                          formTitle={[
-                            {
-                              color: "white",
-                              text:
-                                "Falta pouco para multiplicar suas oportunidades",
-                            },
-                          ]}
-                          color="red"
-                          textColor="light"
-                          formSubTitle="Fale com nossos especialistas e descubra como."
-                          colorHover="darkBlue"
-                          textButton="solicitar contato"
-                        />
-                      </Col>
-                    </Row>
-                  </div>
-                </Row>
-              </StyleHorseContainer>
-            </div>
-
-            <S.Outpartners>
-              <TileBlocksImg
-                title="Sempre gratos às empresas que cocriaram com a gente"
-                list={tileBlocksImgHelpers}
-              />
-            </S.Outpartners>
-          </section>
+          </S.Outpartners>
         </Layout>
       </S.QuemSomosWrapper>
       <Footer />

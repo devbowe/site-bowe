@@ -19,16 +19,12 @@ export const QuemSomosWrapper = styled.div`
 export const SlideWrapper = styled.div`
   .carrosel {
     background: white;
-    padding: 6vh 3vw;
+    padding: 2.5rem 2rem;
     border-radius: 20px;
-    min-height: 236px;
+    min-height: 250px;
 
-    @media (max-width: 1600px) {
-      min-height: 206px;
-    }
-
-    @media (max-width: 1100px) {
-      min-height: 330px;
+    @media (max-width: 900px) {
+      min-height: 200px;
     }
 
     h2 {
@@ -75,5 +71,16 @@ export const Outpartners = styled.div`
 
   @media screen and (max-width: 420px) {
     padding: 2rem;
+  }
+`
+
+export const StyleHorseContainer = styled.div`
+  padding-block: 4rem;
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-image: url(${({ troiaHorse }) => troiaHorse});
+  background-size: contain;
+  @media (max-width: 1100px) {
+    background: none;
   }
 `
