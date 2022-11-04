@@ -16,9 +16,8 @@ export const StyleHorseContainer = styled.div`
   background-image: url(${({ troiaHorse }) => troiaHorse});
 
   @media (max-width: 1100px) {
-    padding-top: 50px;
-    background-size: 26% !important;
-    background-position: bottom right !important;
+    padding-block: 4rem;
+    background: none;
   }
 `
 export const StyledMap = styled.img`

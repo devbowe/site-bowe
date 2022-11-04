@@ -6,34 +6,28 @@ import Facebook from "../../assets/img/facebook.svg"
 import Instagram from "../../assets/img/instagram.svg"
 import Linkedin from "../../assets/img/linkedin.svg"
 import PaperPlane from "../../assets/img/paperPlane.svg"
-import contactService from "../../services/contact"
 import Spacing from "../Spacing"
 import "./footer.css"
 import * as S from "./styled"
 
 const Footer = ({ textButton }) => {
   const { register, handleSubmit, errors } = useForm()
-  const [sendLoading, setSendLoading] = useState(false)
   const [sentStatus, setSendStatus] = useState("")
-  const submit = params => {
-    setSendLoading(true)
-    contactService
-      .send(params)
-      .then(() => {
-        setSendStatus("success")
-      })
-      .catch(error => {
-        setSendStatus("error")
-        console.log(error)
-      })
-      .finally(() => setSendLoading(false))
+
+  const submit = () => {
+    setSendStatus("success")
+    setTimeout(() => {
+      setSendStatus("")
+    }, 6000)
   }
+
   const onSubmit = data => {
     const param = {
       email: data.email,
     }
     submit(param)
   }
+
   return (
     <>
       <S.FooterContainer>
@@ -96,10 +90,13 @@ const Footer = ({ textButton }) => {
                     },
                   })}
                 />
-                <button
-                  type="submit"
-                  text={sendLoading === true ? "Enviando" : textButton}
-                >
+                <input
+                  type="hidden"
+                  name="identificador"
+                  ref={register()}
+                  value="home-newsletter"
+                />
+                <button type="submit" text={textButton}>
                   <img src={PaperPlane} />
                 </button>
               </S.FormCotainer>

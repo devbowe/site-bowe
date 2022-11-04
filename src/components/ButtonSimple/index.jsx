@@ -1,9 +1,17 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { StyledButton } from './styled';
+import React from "react"
+import PropTypes from "prop-types"
+import { StyledButton } from "./styled"
 
 const ButtonSimple = props => {
-  const { text, textColor, bgColor, hoverColor, square, className, buttonClick } = props;
+  const {
+    text,
+    textColor,
+    bgColor,
+    hoverColor,
+    square,
+    className,
+    buttonClick,
+  } = props
 
   return (
     <StyledButton
@@ -12,15 +20,17 @@ const ButtonSimple = props => {
       bgColor={bgColor}
       hoverColor={hoverColor}
       square={square}
-      onClick={buttonClick}>
+      onClick={buttonClick}
+      type="submit"
+    >
       {text}
     </StyledButton>
   )
 }
 
 ButtonSimple.defaultProps = {
-  bgColor: 'transparent',
-  hoverColor: 'darkBlue'
+  bgColor: "transparent",
+  hoverColor: "darkBlue",
 }
 
 ButtonSimple.propTypes = {
@@ -33,4 +43,4 @@ ButtonSimple.propTypes = {
   buttonClick: PropTypes.func.isRequired,
 }
 
-export default ButtonSimple;
+export default ButtonSimple

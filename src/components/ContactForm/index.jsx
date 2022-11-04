@@ -5,10 +5,10 @@ import InputMask from "react-input-mask"
 import { StyledContainer, StyledTextContainer } from "./styled"
 import ButtonSimple from "../ButtonSimple"
 import Typography from "../Typography"
-import contactService from "../../services/contact"
 import { yupResolver } from "@hookform/resolvers/yup"
 import * as yup from "yup"
 import "./contactForm.css"
+import { useEffect } from "react"
 
 const schema = yup.object().shape({
   name: yup
@@ -48,7 +48,6 @@ const ContactForm = ({
   defaultUtmContent,
   defaultUtmTerm,
 }) => {
-  const [sendLoading, setSendLoading] = useState(false)
   const [sentStatus, setSendStatus] = useState("")
   const [secondStep, setSecondStep] = useState(false)
   const isSecondStep = secondStep ? "-step2" : ""
@@ -102,18 +101,11 @@ const ContactForm = ({
     resolver: yupResolver(secondStep ? schemaTwo : schema),
   })
 
-  const submit = params => {
-    setSendLoading(true)
-    contactService
-      .send(params)
-      .then(() => {
-        if (secondStep) setSendStatus("success")
-      })
-      .catch(error => {
-        setSendStatus("error")
-        console.log(error)
-      })
-      .finally(() => setSendLoading(false))
+  const submit = () => {
+    if (secondStep) setSendStatus("success")
+    setTimeout(() => {
+      setSendStatus("")
+    }, 6000)
   }
 
   const onSubmit = data => {
@@ -130,6 +122,7 @@ const ContactForm = ({
       utm_campaign: utmCampaignRef.current.value,
       utm_content: utmContentRef.current.value,
     }
+
     const secondParam = {
       utm_identifier: `${
         cutSlugPath === "" ? "home" : cutSlugPath
@@ -157,6 +150,8 @@ const ContactForm = ({
       submit(secondParam)
     }
   }
+
+  useEffect(() => {}, [setSendStatus])
 
   return (
     <>
@@ -294,7 +289,7 @@ const ContactForm = ({
           </div>
           <div className="mt-5 mt-lg-4 mt-xl-4 px-lg-3 px-xl-3">
             <ButtonSimple
-              text={sendLoading === true ? "Enviando" : textButton}
+              text={textButton}
               textColor={textColor}
               bgColor={color}
               hoverColor={colorHover}
@@ -494,7 +489,7 @@ const ContactForm = ({
             >
               <div className="mt-5 mt-lg-4 mt-xl-4 px-lg-3 px-xl-3">
                 <ButtonSimple
-                  text={sendLoading === true ? "Enviando" : textButton}
+                  text={textButton}
                   textColor={textColor}
                   bgColor={color}
                   hoverColor={colorHover}
