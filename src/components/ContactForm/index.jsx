@@ -5,18 +5,47 @@ import InputMask from "react-input-mask"
 import { StyledContainer, StyledTextContainer } from "./styled"
 import ButtonSimple from "../ButtonSimple"
 import Typography from "../Typography"
-import contactService from "../../services/contact"
+// import contactService from "../../services/contact"
 import { yupResolver } from "@hookform/resolvers/yup"
 import * as yup from "yup"
 import "./contactForm.css"
 import { useEffect } from "react"
+
+const emailCorporativo = email => {
+  const invalidDomains = [
+    "@gmail.",
+    "@yahoo.",
+    "@hotmail.",
+    "@live.",
+    "@aol.",
+    "@outlook.",
+    "@terra.",
+    "@bol.",
+    "@uol.",
+  ]
+
+  for (let i = 0; i < invalidDomains.length; i++) {
+    const domain = invalidDomains[i]
+    if (email.toLowerCase().indexOf(domain) != -1) {
+      return false
+    }
+  }
+  return true
+}
+
+console.log(emailCorporativo("teste@teste.com.br"))
 
 const schema = yup.object().shape({
   name: yup
     .string()
     .required("Campo obrigatório")
     .matches(/^[a-zA-Z_ ]+$/, "Não pode conter números"),
-  email: yup.string().required("Campo obrigatório"),
+  email: yup
+    .string()
+    .required("Campo obrigatório")
+    .test("is-corporate", "Informe um e-mail corporativo", email =>
+      emailCorporativo(email)
+    ),
   phone: yup
     .string()
     .required("Campo obrigatório")
@@ -28,10 +57,12 @@ const schema = yup.object().shape({
 
 const schemaTwo = yup.object().shape({
   namebusiness: yup.string().required("Campo obrigatório"),
-  modelbusiness: yup.string().required("Campo obrigatório"),
-  optionbusiness: yup.string().required("Campo obrigatório"),
+  cf_modelo_de_negocio_que_atua: yup.string().required("Campo obrigatório"),
+  cf_estrutura_do_time_de_mkt: yup.string().required("Campo obrigatório"),
   numberemployees: yup.string().required("Campo obrigatório"),
-  office: yup.string().required("Campo obrigatório"),
+  cf_faturamento_mensal_da_empresa_selecao_correta: yup
+    .string()
+    .required("Campo obrigatório"),
   website: yup.string().required("Campo obrigatório"),
 })
 
@@ -103,18 +134,27 @@ const ContactForm = ({
     resolver: yupResolver(secondStep ? schemaTwo : schema),
   })
 
-  const submit = params => {
-    setSendLoading(true)
-    contactService
-      .send(params)
-      .then(() => {
-        if (secondStep) setSendStatus("success")
-      })
-      .catch(error => {
-        setSendStatus("error")
-        console.log(error)
-      })
-      .finally(() => setSendLoading(false))
+  const submit = () => {
+    if (secondStep) {
+      setSendLoading(true)
+      setSendStatus("success")
+    }
+
+    setTimeout(() => {
+      setSendStatus("")
+      setSendLoading(false)
+    }, 5000)
+    // setSendLoading(true)
+    // contactService
+    //   .send(params)
+    //   .then(() => {
+    //     if (secondStep) setSendStatus("success")
+    //   })
+    //   .catch(error => {
+    //     setSendStatus("error")
+    //     console.log(error)
+    //   })
+    //   .finally(() => setSendLoading(false))
   }
 
   const onSubmit = data => {
@@ -140,10 +180,11 @@ const ContactForm = ({
       name: data.name,
       phone: data.phone,
       namebusiness: data.namebusiness,
-      modelbusiness: data.modelbusiness,
-      optionbusiness: data.optionbusiness,
+      cf_modelo_de_negocio_que_atua: data.cf_modelo_de_negocio_que_atua,
+      cf_estrutura_do_time_de_mkt: data.cf_estrutura_do_time_de_mkt,
       numberemployees: data.numberemployees,
-      office: data.office,
+      cf_faturamento_mensal_da_empresa_selecao_correta:
+        data.cf_faturamento_mensal_da_empresa_selecao_correta,
       website: data.website,
       utm_term: utmTermRef.current.value,
       utm_source: utmSourceRef.current.value,
@@ -264,7 +305,7 @@ const ContactForm = ({
                 ref={register({
                   required: {
                     value: true,
-                    message: "Por favor, informe seu email",
+                    message: "Por favor, insira seu e-mail",
                   },
                 })}
               />
@@ -340,7 +381,7 @@ const ContactForm = ({
                   <div className="input-control my-2 mr-5">
                     <p>Modelo de negócio</p>
                     <select
-                      name="modelbusiness"
+                      name="cf_modelo_de_negocio_que_atua"
                       ref={register({
                         required: {
                           value: true,
@@ -356,16 +397,17 @@ const ContactForm = ({
                       <option value="B2B2C">B2B2C</option>
                     </select>
                     <div className="text-danger mt-2">
-                      {errors.modelbusiness && errors.modelbusiness.message}
+                      {errors.cf_modelo_de_negocio_que_atua &&
+                        errors.cf_modelo_de_negocio_que_atua.message}
                     </div>
                   </div>
                 </div>
 
                 <div className="col-12 col-md-4 col-sm-6">
                   <div className="input-control my-2 mr-5">
-                    <p>Segmento de negócio</p>
+                    <p>Estrutura do time de Mkt</p>
                     <select
-                      name="optionbusiness"
+                      name="cf_estrutura_do_time_de_mkt"
                       ref={register({
                         required: {
                           value: true,
@@ -377,30 +419,19 @@ const ContactForm = ({
                       <option selected value="">
                         Selecione
                       </option>
-                      <option value="Tech: fintech">Tech: fintech</option>
-                      <option value="Tech: SaaS">Tech: SaaS</option>
-                      <option value="Tech: outros">Tech: outros</option>
-                      <option value="Serviços: inovação">
-                        Serviços: inovação
+                      <option value="Mais de 6 pessoas">
+                        Mais de 6 pessoas
                       </option>
-                      <option value="Serviços: tecnologia">
-                        Serviços: tecnologia
+                      <option value="De 4 a 6 pessoas">De 4 a 6 pessoas</option>
+                      <option value="De 2 a 4 pessoas">De 2 a 4 pessoas</option>
+                      <option value="1 pessoa">1 pessoa</option>
+                      <option value="Não tenho time de Mkt">
+                        Não tenho time de Mkt
                       </option>
-                      <option value="Serviços: consultoria">
-                        Serviços: consultoria
-                      </option>
-                      <option value="Serviços: outros">Serviços: outros</option>
-                      <option value="Franchising">Franchising: serviços</option>
-                      <option value="Varejo tradicional">
-                        Varejo tradicional
-                      </option>
-                      <option value="Varejo digital (ecommerce)">
-                        Varejo digital (ecommerce)
-                      </option>
-                      <option value="Outros">Outros</option>
                     </select>
                     <div className="text-danger mt-2">
-                      {errors.optionbusiness && errors.optionbusiness.message}
+                      {errors.optionbusiness &&
+                        errors.cf_modelo_de_negocio_que_atua.message}
                     </div>
                   </div>
                 </div>
@@ -439,9 +470,9 @@ const ContactForm = ({
 
                 <div className="col-12 col-md-4 col-sm-6">
                   <div className="input-control my-2 mr-5">
-                    <p>Seu cargo</p>
+                    <p>Faturamento Anual</p>
                     <select
-                      name="office"
+                      name="cf_faturamento_mensal_da_empresa_selecao_correta"
                       ref={register({
                         required: {
                           value: true,
@@ -452,19 +483,17 @@ const ContactForm = ({
                       <option selected value="">
                         Selecione
                       </option>
-                      <option value="Sócio/Proprietário(a)">
-                        Sócio/Proprietário(a)
+                      <option value="Acima de 500M">Acima de 500M</option>
+                      <option value="Entre 250M e 500M">
+                        Entre 250M e 500M
                       </option>
-                      <option value="CEO/Presidente">CEO/Presidente</option>
-                      <option value="Diretor(a)">Diretor(a)</option>
-                      <option value="Gerente">Gerente</option>
-                      <option value="Coordenador(a)">Coordenador(a)</option>
-                      <option value="Analista">Analista</option>
-                      <option value="Comercial">Comercial</option>
-                      <option value="Outros">Outros</option>
+                      <option value="Entre 16M e 250M">Entre 16M e 250M</option>
+                      <option value="Menos que 16M">Menos que 16M</option>
                     </select>
                     <div className="text-danger mt-2">
-                      {errors.office && errors.office.message}
+                      {errors.cf_faturamento_mensal_da_empresa_selecao_correta &&
+                        errors.cf_faturamento_mensal_da_empresa_selecao_correta
+                          .message}
                     </div>
                   </div>
                 </div>
