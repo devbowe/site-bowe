@@ -35,3 +35,4 @@
 https://www.bowe.com.br/*    https://bowe.com.br/:splat 301
 /abm/* https://landing-pages.bowe.com.br/bowe/abm/:splat 200
 /demand-generation/* https://landing-pages.bowe.com.br/bowe/geracao-de-demanda-b2b/:splat 200
+/solucoes-smartech/* https://landing-pages.bowe.com.br/bowe/solucoes-smartech/:splat 200

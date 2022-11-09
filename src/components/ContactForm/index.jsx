@@ -5,6 +5,7 @@ import InputMask from "react-input-mask"
 import { StyledContainer, StyledTextContainer } from "./styled"
 import ButtonSimple from "../ButtonSimple"
 import Typography from "../Typography"
+import contactService from "../../services/contact"
 import { yupResolver } from "@hookform/resolvers/yup"
 import * as yup from "yup"
 import "./contactForm.css"
@@ -48,6 +49,7 @@ const ContactForm = ({
   defaultUtmContent,
   defaultUtmTerm,
 }) => {
+  const [sendLoading, setSendLoading] = useState(false)
   const [sentStatus, setSendStatus] = useState("")
   const [secondStep, setSecondStep] = useState(false)
   const isSecondStep = secondStep ? "-step2" : ""
@@ -101,11 +103,18 @@ const ContactForm = ({
     resolver: yupResolver(secondStep ? schemaTwo : schema),
   })
 
-  const submit = () => {
-    if (secondStep) setSendStatus("success")
-    setTimeout(() => {
-      setSendStatus("")
-    }, 6000)
+  const submit = params => {
+    setSendLoading(true)
+    contactService
+      .send(params)
+      .then(() => {
+        if (secondStep) setSendStatus("success")
+      })
+      .catch(error => {
+        setSendStatus("error")
+        console.log(error)
+      })
+      .finally(() => setSendLoading(false))
   }
 
   const onSubmit = data => {
@@ -289,7 +298,7 @@ const ContactForm = ({
           </div>
           <div className="mt-5 mt-lg-4 mt-xl-4 px-lg-3 px-xl-3">
             <ButtonSimple
-              text={textButton}
+              text={sendLoading === true ? "Enviando..." : textButton}
               textColor={textColor}
               bgColor={color}
               hoverColor={colorHover}
@@ -413,11 +422,14 @@ const ContactForm = ({
                       <option selected value="">
                         Selecione
                       </option>
-                      <option value="0-50">0-50</option>
-                      <option value="51-100">51-100</option>
-                      <option value="101-500">101-500</option>
-                      <option value="500-1000">500-1000</option>
-                      <option value="+ 1000">+ 1000</option>
+                      <option value="De 1 a 10">De 1 a 10</option>
+                      <option value="De 11 a 25">De 11 a 25</option>
+                      <option value="De 25 a 50">De 25 a 50</option>
+                      <option value="De 51 a 100">De 51 a 100</option>
+                      <option value="De 101 a 300">De 101 a 300</option>
+                      <option value="De 301 a 1000">De 301 a 1000</option>
+                      <option value="De 1001 a 5000">De 1001 a 5000</option>
+                      <option value="5000+">5000+</option>
                     </select>
                     <div className="text-danger mt-2">
                       {errors.numberemployees && errors.numberemployees.message}
@@ -489,7 +501,7 @@ const ContactForm = ({
             >
               <div className="mt-5 mt-lg-4 mt-xl-4 px-lg-3 px-xl-3">
                 <ButtonSimple
-                  text={textButton}
+                  text={sendLoading === true ? "Enviando..." : textButton}
                   textColor={textColor}
                   bgColor={color}
                   hoverColor={colorHover}
