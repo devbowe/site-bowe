@@ -33,8 +33,6 @@ const emailCorporativo = email => {
   return true
 }
 
-console.log(emailCorporativo("teste@teste.com.br"))
-
 const schema = yup.object().shape({
   name: yup
     .string()
@@ -381,7 +379,7 @@ const ContactForm = ({
                   <div className="input-control my-2 mr-5">
                     <p>Modelo de negócio</p>
                     <select
-                      name="cf_modelo_de_negocio_que_atua"
+                      name="cf_leads_modelo_negocio"
                       ref={register({
                         required: {
                           value: true,
@@ -442,7 +440,7 @@ const ContactForm = ({
                   <div className="input-control my-2 mr-5">
                     <p>Nº de funcionários</p>
                     <select
-                      name="numberemployees"
+                      name="cf_numero_de_funcionarios_0"
                       ref={register({
                         required: {
                           value: true,
@@ -453,13 +451,13 @@ const ContactForm = ({
                       <option selected value="">
                         Selecione
                       </option>
-                      <option value="De 1 a 10">De 1 a 10</option>
-                      <option value="De 11 a 25">De 11 a 25</option>
-                      <option value="De 25 a 50">De 25 a 50</option>
-                      <option value="De 51 a 100">De 51 a 100</option>
-                      <option value="De 101 a 300">De 101 a 300</option>
-                      <option value="De 301 a 1000">De 301 a 1000</option>
-                      <option value="De 1001 a 5000">De 1001 a 5000</option>
+                      <option value="1-10">De 1 a 10</option>
+                      <option value="11-25">De 11 a 25</option>
+                      <option value="25-50">De 25 a 50</option>
+                      <option value="51-100">De 51 a 100</option>
+                      <option value="101-300">De 101 a 300</option>
+                      <option value="301-1000">De 301 a 1000</option>
+                      <option value="1001-5000">De 1001 a 5000</option>
                       <option value="5000+">5000+</option>
                     </select>
                     <div className="text-danger mt-2">
